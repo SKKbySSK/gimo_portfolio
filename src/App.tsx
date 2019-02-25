@@ -4,9 +4,6 @@ import WorkCard from "./WorkCard";
 import Aurora from "./icons/Aurora.png";
 import ThemeManager from "./ThemeManager";
 import {CSSProperties} from "react";
-import fs from "fs";
-
-const Plx = require("react-plx");
 
 interface AppProps {
 
@@ -74,10 +71,6 @@ class App extends React.Component<AppProps, AppState> {
 				</table>
 			</div>
 		);
-	}
-	
-	getCareers() {
-						return fs.readdirSync("./careers/")
 	}
 }
 
