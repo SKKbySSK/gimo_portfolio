@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+- deploy
 
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -14,6 +14,9 @@ steps:
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
 
 - script: |
     npm install
